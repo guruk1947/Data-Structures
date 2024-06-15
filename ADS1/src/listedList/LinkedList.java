@@ -160,6 +160,16 @@ public class LinkedList {
 		}
 		return cnt;
 	}
+	public void reverseList() {
+		IntListNode prev=null, next, itr=head;
+		while(itr!=null) {
+			next=itr.getNext();
+			itr.setNext(prev);
+			prev=itr;
+			itr=next;
+		}
+		head=prev;
+	}
 	public void displayAlternate() {
 		if(head==null) {
 			System.out.println("Empty list");
@@ -189,6 +199,13 @@ public class LinkedList {
 		return str;
 	}
 
+	public void recursiveReverse() {
+		
+	}
+	
+	public IntListNode getHead() {
+		return head;
+	}
 	
 	public static void main(String[] args) {
 		
@@ -213,7 +230,8 @@ public class LinkedList {
 			System.out.println("09. Count Nodes");
 			System.out.println("10. Display Alternate Nodes");
 			System.out.println("11. Display Whole Linked List");
-			System.out.println("12. Exit");
+			System.out.println("12. Reverse the Linked List");
+			System.out.println("13. Exit");
 			ch=sc.next();
 			switch (ch) {
 			case "1": {
@@ -284,13 +302,17 @@ public class LinkedList {
 				System.out.println(c);
 				break;
 			}
-			case "12":
+			case "12":{
+				c.reverseList();
+				break;
+			}
+			case "13":
 				break;
 			default:
 				System.out.println("Enter correct Choice");
 					
 				}
-		}while(!ch.equals("12"));
+		}while(!ch.equals("13"));
 		
 		
 		sc.close();
