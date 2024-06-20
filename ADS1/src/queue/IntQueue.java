@@ -75,7 +75,7 @@ public class IntQueue {
 			System.out.println("1. Insert");
 			System.out.println("2. Remove");
 			System.out.println("3. Peek");
-			System.out.println("4. Display Stack");
+			System.out.println("4. Display Queue");
 			System.out.println("5. Exit");
 			ch=sc.next().charAt(0);
 			switch (ch) {
